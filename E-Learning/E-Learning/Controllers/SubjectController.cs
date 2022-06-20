@@ -5,36 +5,35 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace E_Learning.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[Controller]")]
-    public class TeacherController : Controller
+    public class SubjectController : Controller
     {
-        private readonly ITeacher _teacher;
-        public TeacherController(ITeacher teacher)
+        private readonly ISubject _subject;
+        public SubjectController(ISubject subject)
         {
-            _teacher = teacher;
+            _subject = subject;
         }
-        //Get
+
         [HttpGet]
         public IActionResult GetAll()
         {
             try
             {
-                return Ok(_teacher.GetAll());
+                return Ok(_subject.GetAll());
             }
             catch
             {
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
-
         [HttpGet("{id}")]
-        public IActionResult GetByID(int id)
+        public IActionResult GetById(int id)
         {
             try
             {
-                var data = _teacher.GetByID(id);
-                if(data !=null)
+                var data = _subject.GetById(id);
+                if (data != null)
                 {
                     return Ok(data);
                 }
@@ -45,21 +44,20 @@ namespace E_Learning.Controllers
             }
             catch
             {
-                return StatusCode(StatusCodes.Status500InternalServerError); 
+                return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
 
-        //Put
         [HttpPut("id")]
-        public IActionResult Put (int id, TeacherMV teacher)
+        public IActionResult Put (int id, SubjectVM subject)
         {
-            if(id != teacher.Id)
+            if (id != subject.Id)
             {
                 return BadRequest();
             }
             try
             {
-                _teacher.Put(teacher);
+                _subject.Put(subject);
                 return NoContent();
             }
             catch
@@ -68,13 +66,25 @@ namespace E_Learning.Controllers
             }
         }
 
-        //Delelte
+        [HttpPost]
+        public IActionResult Post(Subject subject)
+        {
+            try
+            {
+                return Ok(_subject.Post(subject));
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             try
             {
-                _teacher.Delete(id);
+                _subject.Delete(id);
                 return Ok();
             }
             catch
