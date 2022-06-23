@@ -5,10 +5,10 @@ namespace E_Learning.Service
 {
     public interface ITeacher
     {
-        List<TeacherMV> GetAll();
-        TeacherMV GetByID(int id);
-        TeacherMV Post(Teacher teacher);
-        void Put(TeacherMV teacher);
+        List<TeacherVM> GetAll();
+        TeacherVM GetByID(int id);
+        TeacherVM Post(TeacherVM teacher);
+        void Put(TeacherVM teacher);
         void Delete(int id);
     }
 }

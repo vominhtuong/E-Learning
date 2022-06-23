@@ -14,9 +14,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Db"));
 });
-builder.Services.AddTransient<ITeacher, TeacherImpl>();
+builder.Services.AddScoped<ITeacher, TeacherImpl>();
 builder.Services.AddScoped<ISubject, SubjectImpl>();
-//builder.Services.AddScoped<ISubject, SubjectImpl>();
+
 
 var app = builder.Build();
 

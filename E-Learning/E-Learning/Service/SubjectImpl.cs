@@ -47,7 +47,7 @@ namespace E_Learning.Service
             return null;
         }
 
-        public SubjectVM Post(Subject subject)
+        public SubjectVM Post(SubjectVM subject)
         {
             var _subject = new Subject
             {

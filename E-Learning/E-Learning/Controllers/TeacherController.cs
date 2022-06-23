@@ -27,7 +27,7 @@ namespace E_Learning.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
-
+        //Get/id
         [HttpGet("{id}")]
         public IActionResult GetByID(int id)
         {
@@ -49,9 +49,23 @@ namespace E_Learning.Controllers
             }
         }
 
+        //Post
+        [HttpPost]
+        public IActionResult Post(TeacherVM teacher)
+        {
+            try
+            {
+                return Ok(_teacher.Post(teacher));
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
         //Put
         [HttpPut("id")]
-        public IActionResult Put (int id, TeacherMV teacher)
+        public IActionResult Put (int id, TeacherVM teacher)
         {
             if(id != teacher.Id)
             {

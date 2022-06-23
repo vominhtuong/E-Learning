@@ -2057,19 +2057,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vomin\\.nuget\\packages\\": {}
+    "C:\\Users\\MINHTUONG\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vomin\\source\\repos\\E-Learning\\E-Learning\\E-Learning.csproj",
+      "projectUniqueName": "C:\\Users\\MINHTUONG\\source\\repos\\E-Learning\\E-Learning\\E-Learning.csproj",
       "projectName": "E-Learning",
-      "projectPath": "C:\\Users\\vomin\\source\\repos\\E-Learning\\E-Learning\\E-Learning.csproj",
-      "packagesPath": "C:\\Users\\vomin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vomin\\source\\repos\\E-Learning\\E-Learning\\obj\\",
+      "projectPath": "C:\\Users\\MINHTUONG\\source\\repos\\E-Learning\\E-Learning\\E-Learning.csproj",
+      "packagesPath": "C:\\Users\\MINHTUONG\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MINHTUONG\\source\\repos\\E-Learning\\E-Learning\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\vomin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MINHTUONG\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2132,7 +2132,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -67,7 +67,7 @@ namespace E_Learning.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Subject subject)
+        public IActionResult Post(SubjectVM subject)
         {
             try
             {

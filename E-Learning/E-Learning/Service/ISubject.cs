@@ -7,7 +7,7 @@ namespace E_Learning.Service
     {
         List<SubjectVM> GetAll();
         SubjectVM GetById(int id);
-        SubjectVM Post(Subject subject);
+        SubjectVM Post(SubjectVM subject);
         void Put(SubjectVM subject);
         void Delete(int id);
         

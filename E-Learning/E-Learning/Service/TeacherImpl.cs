@@ -27,9 +27,9 @@ namespace E_Learning.Service
 
        
 
-        public List<TeacherMV> GetAll()
+        public List<TeacherVM> GetAll()
         {
-            var teachers = _context.Teachers.Select(x => new TeacherMV
+            var teachers = _context.Teachers.Select(x => new TeacherVM
             {
                 Id = x.Id,
                 Name = x.Name
@@ -37,12 +37,12 @@ namespace E_Learning.Service
             return teachers.ToList();
         }
 
-        public TeacherMV GetByID(int id)
+        public TeacherVM GetByID(int id)
         {
             var teachers = _context.Teachers.SingleOrDefault(x => x.Id == id);
             if(teachers != null)
             {
-                return new TeacherMV
+                return new TeacherVM
                 {
                     Id=teachers.Id,
                     Name = teachers.Name
@@ -51,12 +51,22 @@ namespace E_Learning.Service
             return null;
         }
 
-        public TeacherMV Post(Teacher teacher)
+        public TeacherVM Post(TeacherVM teacher)
         {
-            throw new NotImplementedException();
+            var _teacher = new Teacher
+            {
+                Name = teacher.Name
+            };
+            _context.Add(_teacher);
+            _context.SaveChanges();
+            return new TeacherVM
+            {
+                Id = _teacher.Id,
+                Name = _teacher.Name
+            };
         }
 
-        public void Put(TeacherMV teacher)
+        public void Put(TeacherVM teacher)
         {
             var _teacher = _context.Teachers.SingleOrDefault(x=>x.Id == teacher.Id);
             _teacher.Name = teacher.Name;
